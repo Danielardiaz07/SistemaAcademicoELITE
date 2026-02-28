@@ -33,54 +33,100 @@ public class SistemaAcademicoELITE {
         sc.close();
         
         public static void mostrarMenu(){
-            System.out.println("SISTEMA ACADEMICO MENU");
-            System.out.println(" --ESTUDIANTES--");
-            System.out.println("  1. Registrar estudiante ");
-            System.out.println("  2. Listar estudiantes ");
-            System.out.println("  3. Buscar estudiante ");
-            System.out.println("  4. Actualizar estudiante ");
-            System.out.println("  5. Eliminar estudiante ");
-            System.out.println(" --ASIGNATURAS--");
-            System.out.println("  6. Registrar asignatura ");
-            System.out.println("  7. Listar asignaturas ");
-            System.out.println("  8. Buscar asignatura ");
-            System.out.println("  9. Actualizar asignatura ");
-            System.out.println(" 10. Eliminar asignatura ");
-            System.out.println(" --NOTAS--");
-            System.out.println("║ 11. Registrar nota");
-            System.out.println("║ 12. Listar notas ");
-            System.out.println("║ 13. Buscar nota ");
-            System.out.println("║ 14. Actualizar nota ");
-            System.out.println("║ 15. Eliminar nota  ");
-            System.out.println("0. Salir");
+            System.out.println("     SISTEMA ACADÉMICO  - MENÚ     ");
+            System.out.println("  1. Estudiantes  ");
+            System.out.println("  2. Asignaturas  ");
+            System.out.println("  3. Notas  ");  
+            System.out.println("  0. Salir ");
+            
             
         }
         private static void procesarOpcion(int opcion) {
     switch (opcion) {
-        case  1: registrarEstudiante();  break;
-        case  2: listarEstudiantes();    break;
-        case  3: buscarEstudiante();     break;
-        case  4: actualizarEstudiante(); break;
-        case  5: eliminarEstudiante();   break;
-        case  6: registrarAsignatura();  break;
-        case  7: listarAsignaturas();    break;
-        case  8: buscarAsignatura();     break;
-        case  9: actualizarAsignatura(); break;
-        case 10: eliminarAsignatura();   break;
-        case 11: registrarNota();        break;
-        case 12: listarNotas();          break;
-        case 13: buscarNota();           break;
-        case 14: actualizarNota();       break;
-        case 15: eliminarNota();         break;
+        case 1: menuEstudiantes();  break;
+        case 2: menuAsignaturas();  break;
+        case 3: menuNotas();        break;
         case  0: break;
-        default: System.out.println("⚠ Opción no válida.");
+        default: System.out.println(" Opción no válida.");
+    } 
     }
+    
+    private static void menuEstudiantes() {
+    int op;
+    do {
+      
+        System.out.println("    GESTIÓN DE ESTUDIANTES  ");
+        
+        System.out.println("  1. Registrar estudiante  ");
+        System.out.println("  2. Listar estudiantes  ");
+        System.out.println("  3. Buscar estudiante ");
+        System.out.println("  4. Actualizar estudiante ");
+        System.out.println("  5. Eliminar estudiante  ");
+        
+        System.out.println("  0. Volver al menú principal ");
        
+        op = leerInt("Seleccione una opción: ");
+        switch (op) {
+            case 1: registrarEstudiante();  break;
+            case 2: listarEstudiantes();    break;
+            case 3: buscarEstudiante();     break;
+            case 4: actualizarEstudiante(); break;
+            case 5: eliminarEstudiante();   break;
+            case 0: break;
+            default: System.out.println(" Opción no válida.");
+        }
+    } while (op != 0);
+}
+
+
+private static void menuAsignaturas() {
+    int op;
+    do {
         
-        
-        
-    }
-    
-    
+        System.out.println("    GESTIÓN DE ASIGNATURAS     ");      
+        System.out.println(" 1. Registrar asignatura      ");
+        System.out.println(" 2. Listar asignaturas   ");
+        System.out.println(" 3. Buscar asignatura ");
+        System.out.println(" 4. Actualizar asignatura  ");
+        System.out.println(" 5. Eliminar asignatura   ");
+        System.out.println(" 0. Volver al menú principal  ");
+      
+        op = leerInt("Seleccione una opción: ");
+        switch (op) {
+            case 1: registrarAsignatura();  break;
+            case 2: listarAsignaturas();    break;
+            case 3: buscarAsignatura();     break;
+            case 4: actualizarAsignatura(); break;
+            case 5: eliminarAsignatura();   break;
+            case 0: break;
+            default: System.out.println(" Opción no válida.");
+        }
+    } while (op != 0);
+}
+
+
+private static void menuNotas() {
+    int op;
+    do {
+        System.out.println("          GESTIÓN DE NOTAS            ");
+        System.out.println("  1. Registrar nota  ");
+        System.out.println("  2. Listar notas   ");
+        System.out.println("  3. Buscar nota     ");
+        System.out.println("  4. Actualizar nota ");
+        System.out.println("  5. Eliminar nota");
+        System.out.println("  0. Volver al menú principal ");
+       
+        op = leerInt("Seleccione una opción: ");
+        switch (op) {
+            case 1: registrarNota();  break;
+            case 2: listarNotas();    break;
+            case 3: buscarNota();     break;
+            case 4: actualizarNota(); break;
+            case 5: eliminarNota();   break;
+            case 0: break;
+            default: System.out.println(" Opción no válida.");
+        }
+    } while (op != 0);
+}
     
 }
