@@ -41,4 +41,14 @@ public class Nota {
         this.valor      = valor; }
     public void setPeriodo(String periodo) { 
         this.periodo    = periodo; }
+    
+    @Override
+    public String toString() {
+        return "Nota{" +
+               "estudiante=" + (estudiante != null ? estudiante.getCodigo() : "null") +
+               ", asignatura=" + (asignatura != null ? asignatura.getCodigo() : "null") +
+               ", valor="    + valor   +
+               ", periodo='" + periodo + '\'' +
+               '}';
+    }
 }
