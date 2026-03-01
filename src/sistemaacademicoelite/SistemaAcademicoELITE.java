@@ -184,7 +184,17 @@ public static void actualizarEstudiante() {
     System.out.println(" Estudiante actualizado.");
 }
 
-
+public static void eliminarEstudiante() {
+    System.out.println("\n── Eliminar Estudiante ──");
+    String codigo = leerTexto("Código del estudiante a eliminar: ");
+    Estudiante e = encontrarEstudiante(codigo);
+    if (e == null) {
+        System.out.println(" Estudiante no encontrado.");
+        return;
+    }
+    estudiantes.remove(e);
+    System.out.println(" Estudiante eliminado.");
+}
 
 
 
