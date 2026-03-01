@@ -1,14 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package sistemaacademicoelite;
-
-/**
- *
- * @author Csamu
- */
-
+package sistemaacademico;
 
 public class Estudiante {
 
@@ -17,7 +7,8 @@ public class Estudiante {
     private String apellido;
     private int edad;
     private int semestre;
-// Constructores
+
+    // Constructores
     public Estudiante() {}
 
     public Estudiante(String codigo, String nombre, String apellido, int edad, int semestre) {
@@ -43,5 +34,14 @@ public class Estudiante {
 
     public int getSemestre() { return semestre; }
     public void setSemestre(int semestre) { this.semestre = semestre; }
+
+    // toString
+    @Override
+    public String toString() {
+        return "Codigo: " + codigo +
+               " | Nombre: " + nombre + " " + apellido +
+               " | Edad: " + edad +
+               " | Semestre: " + semestre;
+    }
 
 }
