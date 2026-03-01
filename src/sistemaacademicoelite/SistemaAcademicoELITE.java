@@ -144,6 +144,30 @@ public static void registrarEstudiante() {
     System.out.println(" Estudiante registrado correctamente.");
 }
 
+public static void listarEstudiantes() {
+    System.out.println("\n── Lista de Estudiantes ──");
+    if (estudiantes.isEmpty()) {
+        System.out.println("No hay estudiantes registrados.");
+        return;
+    }
+    for (int i = 0; i < estudiantes.size(); i++) {
+        Estudiante e = estudiantes.get(i);
+        System.out.printf("[%d] Código: %-5s | %s %s | Edad: %d | Semestre: %d%n",
+            i + 1, e.getCodigo(), e.getNombre(), e.getApellido(), e.getEdad(), e.getSemestre());
+    }
+}
+
+public static void buscarEstudiante() {
+    System.out.println("\n── Buscar Estudiante ──");
+    String codigo = leerTexto("Código a buscar: ");
+    Estudiante e = encontrarEstudiante(codigo);
+    if (e == null) {
+        System.out.println("⚠ Estudiante no encontrado.");
+    } else {
+        System.out.println("✔ Encontrado: " + e);
+    }
+}
+
 
 
 
