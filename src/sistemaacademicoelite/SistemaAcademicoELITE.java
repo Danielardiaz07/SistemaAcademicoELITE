@@ -196,9 +196,64 @@ public static void eliminarEstudiante() {
     System.out.println(" Estudiante eliminado.");
 }
 
+ private static String leerTexto(String mensaje) {
+        System.out.print(mensaje);
+        return sc.nextLine().trim();
+    }
 
+    private static int leerInt(String mensaje) {
+        while (true) {
+            try {
+                System.out.print(mensaje);
+                int val = Integer.parseInt(sc.nextLine().trim());
+                return val;
+            } catch (NumberFormatException ex) {
+                System.out.println("Por favor ingrese un número entero.");
+            }
+        }
+    }
 
+    private static double leerDouble(String mensaje) {
+        while (true) {
+            try {
+                System.out.print(mensaje);
+                double val = Double.parseDouble(sc.nextLine().trim());
+                return val;
+            } catch (NumberFormatException ex) {
+                System.out.println("Por favor ingrese un número decimal.");
+            }
+        }
+    }
 
+private static Estudiante encontrarEstudiante(String codigo) {
+        for (Estudiante e : estudiantes)
+            if (e.getCodigo().equalsIgnoreCase(codigo)) return e;
+        return null;
+    }
+
+    private static boolean existeEstudiante(String codigo) {
+        return encontrarEstudiante(codigo) != null;
+    }
+
+    private static Asignatura encontrarAsignatura(String codigo) {
+        for (Asignatura a : asignaturas)
+            if (a.getCodigo().equalsIgnoreCase(codigo)) return a;
+        return null;
+    }
+
+    private static boolean existeAsignatura(String codigo) {
+        return encontrarAsignatura(codigo) != null;
+    }
+
+    private static Nota encontrarNota(String codEst, String codAsig) {
+        for (Nota n : notas)
+            if (n.getEstudiante().getCodigo().equalsIgnoreCase(codEst) &&
+                n.getAsignatura().getCodigo().equalsIgnoreCase(codAsig))
+                return n;
+        return null;
+    }
+
+}
 
 
 
