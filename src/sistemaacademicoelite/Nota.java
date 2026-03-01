@@ -20,17 +20,17 @@ public class Nota {
     public Nota(Estudiante estudiante, Asignatura asignatura, double valor, String periodo) {
         this.estudiante = estudiante;
         this.asignatura = asignatura;
-        this.valor      = valor;
-        this.periodo    = periodo;
+        this.valor = valor;
+        this.periodo = periodo;
     }
     
     public Estudiante getEstudiante() { 
         return estudiante; }
     public Asignatura getAsignatura() { 
         return asignatura; }
-    public double     getValor() { 
+    public double getValor() { 
         return valor; }
-    public String     getPeriodo() { 
+    public String getPeriodo() { 
         return periodo; }
     
     public void setEstudiante(Estudiante estudiante) { 
@@ -38,17 +38,16 @@ public class Nota {
     public void setAsignatura(Asignatura asignatura) { 
         this.asignatura = asignatura; }
     public void setValor(double valor) { 
-        this.valor      = valor; }
+        this.valor = valor; }
     public void setPeriodo(String periodo) { 
-        this.periodo    = periodo; }
+        this.periodo = periodo; }
     
     @Override
     public String toString() {
         return "Nota{" +
                "estudiante=" + (estudiante != null ? estudiante.getCodigo() : "null") +
                ", asignatura=" + (asignatura != null ? asignatura.getCodigo() : "null") +
-               ", valor="    + valor   +
-               ", periodo='" + periodo + '\'' +
-               '}';
+               ", valor=" + valor +
+               ", periodo='" + periodo + '\'' + '}';
     }
 }
