@@ -40,4 +40,14 @@ public class Asignatura {
         this.creditos = creditos; }
     public void setDocente(String docente) { 
         this.docente  = docente; }
+    
+    @Override
+    public String toString() {
+        return "Asignatura{" +
+               "codigo='"    + codigo   + '\'' +
+               ", nombre='"  + nombre   + '\'' +
+               ", creditos=" + creditos +
+               ", docente='" + docente  + '\'' +
+               '}'; 
+    }
 }
