@@ -168,7 +168,21 @@ public static void buscarEstudiante() {
     }
 }
 
-
+public static void actualizarEstudiante() {
+    System.out.println("\n── Actualizar Estudiante ──");
+    String codigo = leerTexto("Código del estudiante a actualizar: ");
+    Estudiante e = encontrarEstudiante(codigo);
+    if (e == null) {
+        System.out.println(" Estudiante no encontrado.");
+        return;
+    }
+    System.out.println("Datos actuales: " + e);
+    e.setNombre(leerTexto("Nuevo nombre (" + e.getNombre() + "): "));
+    e.setApellido(leerTexto("Nuevo apellido (" + e.getApellido() + "): "));
+    e.setEdad(leerInt("Nueva edad (" + e.getEdad() + "): "));
+    e.setSemestre(leerInt("Nuevo semestre (" + e.getSemestre() + "): "));
+    System.out.println(" Estudiante actualizado.");
+}
 
 
 
