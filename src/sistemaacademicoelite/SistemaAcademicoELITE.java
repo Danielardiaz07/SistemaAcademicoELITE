@@ -129,4 +129,29 @@ private static void menuNotas() {
     } while (op != 0);
 }
     
+public static void registrarEstudiante() {
+    System.out.println("\n── Registrar Estudiante ──");
+    String codigo = leerTexto("Código: ");
+    if (existeEstudiante(codigo)) {
+        System.out.println(" Ya existe un estudiante con ese código.");
+        return;
+    }
+    String nombre   = leerTexto("Nombre: ");
+    String apellido = leerTexto("Apellido: ");
+    int    edad     = leerInt("Edad: ");
+    int    semestre = leerInt("Semestre: ");
+    estudiantes.add(new Estudiante(codigo, nombre, apellido, edad, semestre));
+    System.out.println(" Estudiante registrado correctamente.");
+}
+
+
+
+
+
+
+
+
+
+
+
 }
